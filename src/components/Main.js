@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 import axios from 'axios';
 
-export const ROOT_URL = 'http://localhost:9090/api';
+// export const ROOT_URL = 'http://localhost:9090/api';
+export const ROOT_URL = 'https://hotdogs-or-legs.herokuapp.com/api';
 
 class Main extends Component {
   constructor(props) {
@@ -27,7 +28,7 @@ class Main extends Component {
     axios.post(`${ROOT_URL}/classify`, body).then((response) => {
       this.printResults(response);
     }).catch((error) => {
-      console.log('Error with axios call in createPost()');
+      console.log('Error with axios classify call');
       this.setState({
         result: 'invalid URL',
         hotdogScore: '',
